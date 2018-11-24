@@ -13,13 +13,13 @@ import org.junit.Test;
 
 public class RestControllerTest {
 	
-	@Test(timeout=5000)
+	@Test(timeout=10000)
 	public void testCreateRide() {
 		RestTemplate restTemplate = new RestTemplate();
 		
 		Ride ride = new Ride();
-		ride.setName("Bobsled Trail Ride");
-		ride.setDuration(35);
+		ride.setName("Round Valley Ride");
+		ride.setDuration(38);
 		
 		restTemplate.put("http://localhost:8080/ride_tracker/ride", ride);
 		
