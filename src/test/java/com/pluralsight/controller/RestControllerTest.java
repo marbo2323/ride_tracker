@@ -18,10 +18,12 @@ public class RestControllerTest {
 		RestTemplate restTemplate = new RestTemplate();
 		
 		Ride ride = new Ride();
-		ride.setName("Round Valley Ride");
-		ride.setDuration(38);
+		ride.setName("Sagebrush Trail");
+		ride.setDuration(33);
 		
 		ride = restTemplate.postForObject("http://localhost:8080/ride_tracker/ride", ride, Ride.class);
+		
+		System.out.println("Ride: " + ride);
 		
 	}
 

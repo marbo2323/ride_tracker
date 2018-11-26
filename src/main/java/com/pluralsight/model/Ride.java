@@ -6,7 +6,7 @@ public class Ride {
 	private String name;
 	private int duration;
 	
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
 
