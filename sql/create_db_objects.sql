@@ -7,3 +7,6 @@ create table ride_tracker.ride (
 	constraint ride_pk primary key(id)
 );
 
+
+-- add ride_date field
+alter table ride add ride_date datetime after duration;
