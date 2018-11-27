@@ -44,9 +44,12 @@ public class RideServiceImpl implements RideService {
 			Object [] temp = {new Date(), ride.getId()};
 			pairs.add(temp);
 		}
-		 
 		 rideRepository.updateRides(pairs);
-		
 	}
 	
+	@Override
+	public void deleteRide(Integer id) {
+		rideRepository.deleteRide(id);
+		
+	}
 }

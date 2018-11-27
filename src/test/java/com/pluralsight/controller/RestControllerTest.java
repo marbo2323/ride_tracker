@@ -69,8 +69,12 @@ public class RestControllerTest {
 	@Test(timeout = 8000)
 	public void testBatchUpdate() {
 		RestTemplate restTemplate = new RestTemplate();
-		
 		restTemplate.getForObject("http://localhost:8080/ride_tracker/batch", Object.class);
-		
+	}
+	
+	@Test(timeout = 8000)
+	public void testDelete() {
+		RestTemplate restTemplate = new RestTemplate();
+		restTemplate.delete("http://localhost:8080/ride_tracker/delete/7", Object.class);
 	}
 }
