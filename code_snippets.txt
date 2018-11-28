@@ -1,5 +1,7 @@
 
 
+---------------------- RideRepositoryImpl snippets ------------------------------------------------------------------------------
+
 /*
 	simple record insert
 */
@@ -59,4 +61,11 @@
 		
 		return getRide(id.intValue());
 	}
+	
+	
+	@Override
+	public void deleteRide(Integer id) {
+		jdbcTemplate.update("delete from ride where id = ?", id);
+	}
+	
 	
