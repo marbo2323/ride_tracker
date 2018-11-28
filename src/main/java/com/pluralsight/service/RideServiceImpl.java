@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.pluralsight.model.Ride;
 import com.pluralsight.repository.RideRepository;
@@ -37,6 +38,7 @@ public class RideServiceImpl implements RideService {
 	}
 	
 	@Override
+	@Transactional
 	public void batch() {
 		List<Ride> rides = getRides();
 		List<Object[]> pairs = new ArrayList<>();

@@ -68,4 +68,22 @@
 		jdbcTemplate.update("delete from ride where id = ?", id);
 	}
 	
+	------------------------------- RideServiceImpl --------------------------------------------------------
 	
+	/*
+		method throws exception and the transaction will be rolled back
+	*/
+	@Override
+	@Transactional
+	public void batch() {
+		List<Ride> rides = getRides();
+		List<Object[]> pairs = new ArrayList<>();
+		 for (Ride ride : rides) {
+			Object [] temp = {new Date(), ride.getId()};
+			pairs.add(temp);
+		}
+		 rideRepository.updateRides(pairs);
+		 
+		throw new DataAccessException("testing") {
+		};
+	}
